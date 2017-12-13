@@ -2,10 +2,12 @@
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//a
+		// 이진탐색
+		// 정렬된 데이터 집합을 이분화하면서 탐색하는 방법
+		BinarySearch BS = new BinarySearch();
+		int[] a = { 1,2,3,4,5,6,7};
 		
-		
+		System.out.println(BS.binarySearch(a, 3));		
 	}
 	
 	int binarySearch(int[] a, int x) {
@@ -14,18 +16,19 @@ public class BinarySearch {
 		int mid;
 		
 		while(low <= high) {
+			
 			mid = (high + low) / 2;
 			if(a[mid] < x) {
-				mid = mid +1;
+				low = mid +1;
 			}else if(a[mid] > x){
-				mid = mid -1;
+				high = mid -1;
 			}else {
-				return x;
+				return a[mid];
 			}
 			
 		}
 		
-		return -2;
+		return -1;
 	}
 
 
